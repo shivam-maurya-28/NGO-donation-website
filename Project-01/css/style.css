@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    zoom:1;
+}
+:root{
+    --bg:#FBFEFD;
+    --text:#14a05e;
+}
+body {
+    background: #FBFEFD;
+}
+
+header {
+    
+    background: #FBFEFD;
+    
+    /* background: linear-gradient(112deg, rgba(255,255,255,1) 24%, rgba(193,220,242,1) 47%, rgba(171,212,237,1) 87%);    width: 100%; */
+    height: auto; /* Change height to auto for responsiveness */
+    display: flex;
+    flex-wrap: wrap; /* Allow header contents to wrap */
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px; /* Reduce padding for smaller screens */
+    position: sticky; /* Make the header sticky */
+    top: 0px; /* Stick the header to the top of the viewport */
+    z-index: 1000; /* Ensure header is on top of other content */
+}
+
+
+header .logo {
+    font-size: 25px;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row; /* Ensure navigation items are in a row */
+}
+
+header nav ul li {
+    margin-right: 10px; /* Add margin between navigation items */
+}
+
+header nav ul li:last-child {
+    margin-right: 0; /* Remove margin from last navigation item */
+}
+
+header nav ul li a {
+    color:#424967;
+    padding: 5px 10px; /* Adjust padding for smaller screens */
+    border: 3px solid transparent;
+    transition: 0.2s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    border-bottom-color: dodgerblue;
+    color:var(--text);
+    background-color:var(--bg);
+    padding:8px 10px;
+    border:1px solid rgb(247, 241, 241);
+    border-radius: 8px;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #000;
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 20px 30px; /* Reduce padding for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 100%; /* Change top position for better placement */
+        background: #fff;
+        padding: 20px;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow for better visibility */
+    }
+
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+
+    header nav ul {
+        display: block;
+    }
+
+    header nav ul li {
+        margin-right: 0; /* Remove margin between navigation items */
+        margin-bottom: 10px; /* Add margin below navigation items */
+    }
+
+    header nav ul li:last-child {
+        margin-bottom: 0; /* Remove margin from last navigation item */
+    }
+}
+.log_out:hover{
+    color:red;
+}
+/* Style for submenu */
+.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    white-space: nowrap; /* Ensures items are not wrapped */
+}
+/* Show submenu on parent hover */
+.profile-menu:hover .sub-menu {
+    display: block;
+}
+.sub-menu li {
+    display: block; /* Display items as block */
+    margin-bottom: 5px; /* Add spacing between items */
+}
+
+
+/* Footer section */
+
+footer {
+    /* background: #343434; */
+    background:#d5dbdf;
+
+    padding-top: 50px;
+}
+.fcontainer {
+    max-width: 100%; /* Adjusted to make it fully responsive */
+    border-radius: 25px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer-content {
+    width: 100%;
+    max-width: 360px; /* Adjust max-width as needed */
+    margin-bottom: 30px; /* Add some space between content */
+    flex: 1 0 auto; /* Allow content to shrink or grow */
+}
+.footer-content h3 {
+    font-size: 24px; /* Decrease font size for smaller screens */
+    margin-bottom: 15px;
+    text-align: center;
+    color:var(--text);
+}
+.footer-content p {
+    padding: 7px;
+    /* color: #ccc; */
+    color:var(--text);
+    text-align: center;
+}
+.footer-content ul {
+    text-align: center;
+    padding: 0;
+}
+.list a {
+    color:var(--text);
+    text-decoration: none;
+}
+.list {
+    padding: 0;
+    margin: 0;
+}
+.list li {
+    text-align: center;
+    list-style-type: none;
+    padding: 7px;
+    position: relative;
+}
+.list li::before {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #074f14;
+    transition-duration: .5s;
+}
+.list li:hover::before {
+    width: 70px;
+}
+.social-icons {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.social-icons li {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+.social-icons i {
+    color:var(--text);
+    font-size: 25px;
+}
+.social-icons a {
+    text-decoration: none;
+}
+.social-icons a:hover,
+.social-icons i:hover {
+    color: #135ddd;
+}
+.bottom-bar {
+    /* background: #f18930; */
+    background:var(--text);
+
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+.bottom-bar p {
+    /* color: #343434; */
+    color:#ffff;
+    font-weight: bold;
+    margin: 0;
+    font-size: 14px; /* Decrease font size for smaller screens */
+    padding: 7px;
+}
+@media only screen and (min-width: 768px) {
+    .footer-content {
+        width: calc(33.33% - 20px); /* Use one-third of the container width for larger screens with some margin */
+        margin: 0 10px; /* Add margin between footer content */
+    }
+}
